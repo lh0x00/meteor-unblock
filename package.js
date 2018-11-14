@@ -17,6 +17,7 @@ Package.onUse(api => {
 Package.onTest(api => {
   api.versionsFrom("1.7");
   api.use("ecmascript", ["server"]);
+  api.use("tinytest");
   api.use("lamhieu:unblock");
   api.mainModule("unblock-tests.js");
 });
