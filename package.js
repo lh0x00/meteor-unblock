@@ -1,6 +1,6 @@
 Package.describe({
   name: "lamhieu:unblock",
-  version: "0.0.3",
+  version: "0.0.4",
   summary: "This package provides `this.unblock` inside Meteor publications",
   git: "https://github.com/lamhieu-vk/meteor-unblock.git",
   documentation: "README.md",
