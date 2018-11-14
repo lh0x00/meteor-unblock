@@ -7,7 +7,8 @@ function exposeSubscription(session, namespace) {
   };
   const pubName = `__meteorCore_pub_${Random.id()}`;
   session._startSubscription(publicationHandler, subId, [], pubName);
-  const subscription = session._namedSubs.get(subId);
+  const isMap = session._namedSubs instanceof Map;
+  const subscription = !isMap ? session._namedSubs.get(subId) : session._namedSubs[subId];
   namespace.Subscription = subscription.constructor;
   session._stopSubscription(subId);
 }

@@ -18,7 +18,12 @@ function startSubscription(handler, subId, params, name) {
 
   sub.unblock = cachedUnblock || emptyFunction;
   if (subId) {
-    self._namedSubs.set(subId, sub);
+    const isMap = session._namedSubs instanceof Map;
+    if (isMap) {
+      self._namedSubs.set(subId, sub);
+    } else {
+      self._namedSubs[subId] = sub;
+    }
   } else {
     self._universalSubs.push(sub);
   }
