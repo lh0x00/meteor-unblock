@@ -18,7 +18,7 @@ function startSubscription(handler, subId, params, name) {
 
   sub.unblock = cachedUnblock || emptyFunction;
   if (subId) {
-    const isMap = session._namedSubs instanceof Map;
+    const isMap = self._namedSubs instanceof Map;
     if (isMap) {
       self._namedSubs.set(subId, sub);
     } else {
